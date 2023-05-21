@@ -1,0 +1,18 @@
+﻿<Window x:Class="Ex3.AddEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex3"
+        mc:Ignorable="d"
+        Title="AddEdit" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <TextBox x:Name="title" HorizontalAlignment="Left" Margin="34,33,0,0" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="phone" HorizontalAlignment="Left" Margin="34,111,0,0" TextWrapping="Wrap" Text="Телефон" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="type" DisplayMemberPath="Title" HorizontalAlignment="Left" Margin="34,72,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="priority" HorizontalAlignment="Left" Margin="34,150,0,0" TextWrapping="Wrap" Text="Приоритет" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Add" Click="Add_Click" Content="Добавить" HorizontalAlignment="Left" Margin="34,184,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Edit" Click="Edit_Click" Content="Изменить" HorizontalAlignment="Left" Margin="34,217,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

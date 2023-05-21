@@ -1,0 +1,19 @@
+﻿<Window x:Class="Ex3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Label Content="Логин" FontSize="16"/>
+            <TextBox x:Name="login" FontSize="16"/>
+            <Label Content="Пароль" FontSize="16"/>
+            <PasswordBox x:Name="password" PasswordChar="*" FontSize="16"/>
+            <Button x:Name="enter" Content="Войти" Click="enter_Click" FontSize="16"/>
+            <Button x:Name="close" Content="Выйти" Click="close_Click" FontSize="16"/>
+        </StackPanel>
+    </Grid>
+</Window>

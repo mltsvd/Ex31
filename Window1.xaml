@@ -1,0 +1,55 @@
+﻿<Window x:Class="Ex3.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex3"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="349*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="find" Text="Введите для поиска" Grid.Row="0" Grid.Column="0" TextChanged="find_TextChanged"/>
+        <ComboBox x:Name="sort" Grid.Row="0" Grid.Column="1" SelectionChanged="sort_SelectionChanged" SelectedIndex="0">
+            <ComboBoxItem Content="По умолчанию"/>
+            <ComboBoxItem Content="Приоритет по убыван."/>
+            <ComboBoxItem Content="Приоритет по возрастн."/>
+        </ComboBox>
+        <ComboBox x:Name="filt" Grid.Row="0" Grid.Column="2" SelectionChanged="filt_SelectionChanged" DisplayMemberPath="Title">
+        </ComboBox>
+        <ListView x:Name="lv" Grid.Row="1" Grid.ColumnSpan="3">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="350"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding PhotoFull}" Grid.Row="1" Grid.Column="0"/>
+                        <TextBlock Text="{Binding AgentType.Title, StringFormat={}{0}|}" Grid.Row="0" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Title}" Grid.Row="0" Grid.Column="2"/>
+                        <TextBlock Text="{Binding Phone}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="{Binding Priority}" Grid.Row="0" Grid.Column="3"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="Del" Content="Удалить" Click="Del_Click" Grid.Column="0" Grid.Row="2"></Button>
+        <Button x:Name="Add" Content="Добавить" Click="Add_Click" Grid.Column="1" Grid.Row="2"></Button>
+        <Button x:Name="Edit" Content="Изменить" Click="Edit_Click" Grid.Column="2" Grid.Row="2"></Button>
+    </Grid>
+</Window>
